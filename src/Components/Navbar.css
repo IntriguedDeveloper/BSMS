@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+}
+.nav {
+  background-color: rgb(192, 192, 225);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menuLogoWrapper {
+  display: flex;
+  height: 60px;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-left: 15px;
+}
+.hamMenu {
+  height: 30px;
+  width: auto;
+}
+.hamMenu:hover{
+	cursor:pointer;
+}
+.logo {
+  height: inherit;
+  width: auto;
+  margin-left: 10px;
+}
+.title {
+  font-size: 2rem;
+}
+@media only screen and (max-width: 690px) {
+  .title {
+    font-size: 1.3rem;
+  }
+}
+.accountIcon {
+  height: 40px;
+  width: max-content;
+  margin-right: 10px;
+}
+.accountIcon:hover {
+  cursor: pointer;
+}
+
+.sideNav {
+  position: fixed;
+  top: 70px; /* Adjust top position to match navbar height */
+  left: -300px; /* Off-screen by default */
+  width: 250px;
+  height: 100%;
+  background-color: rgba(37, 111, 0);
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 0;
+}
+
+.sideNav.open {
+  left: 0; /* Slide in when the menu is open */
+}
+
+.closeButton {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+  margin: 0;
+}
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.menuList li {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  height: 90px;
+  font-size: 15px;
+  background-color: rgb(22, 85, 22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.menuList li:hover {
+  cursor: pointer;
+  background-color: rgb(24, 37, 24);
+}
+.menuList li:focus {
+  background-color: rgb(24, 37, 24);
+}
+.menuList li:active{
+    background-color: rgb(22, 85, 22);
+}
