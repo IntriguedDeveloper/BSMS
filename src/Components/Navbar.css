@@ -83,7 +83,6 @@
 }
 .menuList li {
 	font-family:Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
   height: 90px;
   font-size: 15px;
   background-color: rgb(22, 85, 22);
@@ -94,6 +93,11 @@
   border-top: 1px solid white;
   user-select: none;
   -webkit-user-select: none;
+  color: white;
+}
+.menuList a{
+  text-decoration: none;
+  color: white;
 }
 .menuList li:hover {
   cursor: pointer;

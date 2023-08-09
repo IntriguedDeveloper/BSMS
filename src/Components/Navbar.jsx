@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import accountIcon from "../assets/account.png";
 import hamMenu from "../assets/menu.png";
@@ -6,7 +7,7 @@ import hamMenu from "../assets/menu.png";
 export default function NavBar() {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const handleResize = () => {
       setViewportWidth(window.innerWidth);
@@ -27,6 +28,9 @@ export default function NavBar() {
     setIsMenuOpen(false);
   };
 
+  const redirectToPage = (pagePath) => {
+    navigate(pagePath);
+  };
   return (
     <div className="nav">
       <div className="menuLogoWrapper">
@@ -47,10 +51,16 @@ export default function NavBar() {
           &times;
         </button>
         <ul className="menuList">
-          <li>Attendance System</li>
-          <li>View Students</li>
-          <li>Enrol New Student</li>
-          <li>Delete Existing Students</li>
+          <li
+            onClick={() => {
+              redirectToPage("/attendance");
+            }}
+          >
+            Attendance System
+          </li>
+          <li onClick={()=>{redirectToPage('/view-students')}}>View Students</li>
+          <li onClick={() =>{redirectToPage('/enrol-student')}}>Enrol New Student</li>
+          <li onClick={() => {redirectToPage('/delete-student')}}>Delete Existing Students</li>
         </ul>
       </div>
       <h2 className="title">

@@ -1,11 +1,16 @@
 import ClientAuthPage from "./Auth/ClientAuthPage.jsx";
-import HomePage from "./HomePage.jsx";
-import './LoadingBar.css';
-import React, { useEffect, useState} from "react";
+import HomePage from "./Home/HomePage.jsx";
+import "./LoadingBar.css";
+import React, { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import { firebaseConfig } from "./firebase.js";
-import { BrowserRouter as Router, Routes, Route , useNavigate} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -24,18 +29,24 @@ export default function App() {
 
     return () => unsubscribe(); // Clean up the auth state listener
   }, [auth]);
-  if(isLoading){
-    return(
+  if (isLoading) {
+    return (
       <div className="loading-spinner-container">
         <div className="loading-spinner"></div>
       </div>
-    )
+    );
   }
   return (
     <Router>
       <Routes>
-        <Route path="/" element = {isLoggedIn ? <HomePage></HomePage> : <ClientAuthPage></ClientAuthPage>}></Route>
+      <Route
+        path="*"
+        element={
+          isLoggedIn ? <HomePage></HomePage> : <ClientAuthPage></ClientAuthPage>
+        }
+      ></Route>
       </Routes>
+      
     </Router>
   );
 }
