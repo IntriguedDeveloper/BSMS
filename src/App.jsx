@@ -1,5 +1,5 @@
 import ClientAuthPage from "./Auth/ClientAuthPage.jsx";
-import HomePage from "./Auth/HomePage.jsx";
+import HomePage from "./HomePage.jsx";
 import './LoadingBar.css';
 import React, { useEffect, useState} from "react";
 import { initializeApp } from "firebase/app";
@@ -32,9 +32,10 @@ export default function App() {
     )
   }
   return (
-    <>
-      {/* <ClientAuthPage></ClientAuthPage> */}
-      <AttendancePage></AttendancePage>      
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element = {isLoggedIn ? <HomePage></HomePage> : <ClientAuthPage></ClientAuthPage>}></Route>
+      </Routes>
+    </Router>
   );
 }
