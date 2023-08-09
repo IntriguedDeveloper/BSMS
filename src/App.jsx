@@ -39,14 +39,17 @@ export default function App() {
   return (
     <Router>
       <Routes>
-      <Route
-        path="*"
-        element={
-          isLoggedIn ? <HomePage></HomePage> : <ClientAuthPage></ClientAuthPage>
-        }
-      ></Route>
+        <Route
+          path="*"
+          element={
+            isLoggedIn ? (
+              <HomePage></HomePage>
+            ) : (
+              <ClientAuthPage></ClientAuthPage>
+            )
+          }
+        ></Route>
       </Routes>
-      
     </Router>
   );
 }

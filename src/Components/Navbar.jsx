@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import accountIcon from "../assets/account.png";
 import hamMenu from "../assets/menu.png";
@@ -58,9 +58,27 @@ export default function NavBar() {
           >
             Attendance System
           </li>
-          <li onClick={()=>{redirectToPage('/view-students')}}>View Students</li>
-          <li onClick={() =>{redirectToPage('/enrol-student')}}>Enrol New Student</li>
-          <li onClick={() => {redirectToPage('/delete-student')}}>Delete Existing Students</li>
+          <li
+            onClick={() => {
+              redirectToPage("/view-students");
+            }}
+          >
+            View Students
+          </li>
+          <li
+            onClick={() => {
+              redirectToPage("/enrol-student");
+            }}
+          >
+            Enrol New Student
+          </li>
+          <li
+            onClick={() => {
+              redirectToPage("/delete-student");
+            }}
+          >
+            Delete Existing Students
+          </li>
         </ul>
       </div>
       <h2 className="title">
