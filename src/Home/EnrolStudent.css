@@ -1,0 +1,67 @@
+.container {
+  background-color: rgb(95, 84, 84);
+  height: 600px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  color: white;
+}
+.container input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 40px;
+  font-size: larger;
+  width: 75%;
+  border-radius: 4px;
+  border: none;
+  padding: 10px;
+
+}
+.container button {
+  height: 40px;
+  width: 30%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: rgb(43, 41, 41);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.container button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 21, 21);
+}
+.container button:active {
+    background-color: rgb(10, 8, 8);
+}
+
+/* Prevent tap/click outline on mobile */
+.container button:active:focus {
+  outline: none;
+}
+.message {
+  height: 40px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(6, 40, 6);
+  border-radius: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.status {
+  padding: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.statusIcon {
+  margin: 0;
+  margin-left: 5px;
+  height: 35px;
+
+  width: auto;
+  padding: 0;
+}

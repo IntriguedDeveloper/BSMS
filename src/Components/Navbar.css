@@ -32,11 +32,7 @@
 .title {
   font-size: 2rem;
 }
-@media only screen and (max-width: 690px) {
-  .title {
-    font-size: 1.3rem;
-  }
-}
+
 .accountIcon {
   height: 40px;
   width: max-content;

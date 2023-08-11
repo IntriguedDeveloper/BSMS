@@ -4,6 +4,7 @@ import AttendancePage from "./AttendancePage";
 import StudentViewPage from "./StudentViewPage";
 import EnrolStudent from "./EnrolStudent";
 import DeleteExistingStudent from "./DeleteExistingStudent";
+import './HomePage.css';
 export default function HomePage(){
     return(
         <>
