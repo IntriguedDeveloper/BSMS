@@ -5,9 +5,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import "./ClientAuthPage.css";
-import { useState } from "react";
 
+import { useState } from "react";
+import './ClientAuthPage.css';
 const app = initializeApp(firebaseConfig);
 
 export default function ClientAuthPage() {
