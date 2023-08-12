@@ -21,7 +21,7 @@ export default function EnrolStudent() {
       ></input>
       <button className="fingerprintButton">Request Fingerprint</button>
       <div className="message">
-        <a className="status">Fingerprint Enrolled</a>
+        <a className="status">Fingerprint successful</a>
         <img className="statusIcon" src = {msgIcon}></img>
       </div>
 
