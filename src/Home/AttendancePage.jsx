@@ -1,17 +1,14 @@
 import React from "react";
 import "./AttendancePage.css";
-import checkIcon from "../assets/check-1.png";
+import checkIcon from '../assets/check-1.png';
 
 export default function AttendancePage() {
   // Function to generate options for dropdowns
   const generateOptions = (start, end) => {
     const options = [];
     for (let i = start; i <= end; i++) {
-      options.push(
-        <option key={i} value={i}>
-          {i}
-        </option>
-      );
+      const formattedValue = i < 10 ? `0${i}` : `${i}`;
+      options.push(<option key={formattedValue} value={formattedValue}>{formattedValue}</option>);
     }
     return options;
   };
@@ -21,36 +18,24 @@ export default function AttendancePage() {
       <div className="navContainer">
         <nav className="datebar">
           <div className="optionWrapper">
-            <input
-              type="number"
-              className="dateInput"
-              placeholder="Day"
-            ></input>
+            <input type="number" className="dateInput" placeholder="Day"></input>
             <select className="date-dropdown" id="day">
-              <option value="">Day</option>
+              
               {generateOptions(1, 31)}
             </select>
           </div>
           <div className="optionWrapper">
-            <input
-              type="text"
-              className="monthInput"
-              placeholder="Month"
-            ></input>
+            <input type="text" className="monthInput" placeholder="Month"></input>
             <select className="date-dropdown" id="month">
-              <option value="">Month</option>
+              
               {generateOptions(1, 12)}
             </select>
           </div>
           <div className="optionWrapper">
-            <input
-              className="yearInput"
-              type="number"
-              placeholder="Year"
-            ></input>
+            <input className="yearInput" type="number" placeholder="Year"></input>
             <select className="date-dropdown" id="year">
-              <option value="">Year</option>
-              {generateOptions(2020, 2030)}
+            
+              {generateOptions(2001, 2030)}
             </select>
           </div>
         </nav>
