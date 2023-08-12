@@ -24,7 +24,9 @@ export default function ClientAuthPage() {
         console.log(user);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error.message);
+        let errormsg = error.message;
+        alert(errormsg);
       });
   };
   const onLogin = (event) => {

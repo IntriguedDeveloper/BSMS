@@ -31,12 +31,14 @@
 }
 .title {
   font-size: 2rem;
+  margin-right: 30px;
 }
 
 .accountIcon {
   height: 40px;
   width: max-content;
   margin-right: 10px;
+  margin-left: 10px;
 }
 .accountIcon:hover {
   cursor: pointer;
