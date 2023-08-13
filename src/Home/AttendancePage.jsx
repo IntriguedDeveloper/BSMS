@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./AttendancePage.css";
 import checkIcon from "../assets/cross.png";
-import { getFirestore, collection, query, getDocs } from "firebase/firestore";
+import { getFirestore, collection, query, getDocs, where } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { AppInstance } from "../firebase";
 const db = getFirestore(AppInstance);
