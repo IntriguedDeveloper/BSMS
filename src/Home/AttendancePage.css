@@ -42,7 +42,7 @@
   display: grid;
   margin: 0;
   padding: 0;
-  grid-template-columns: auto 1fr auto; /* 3 columns */
+  grid-template-columns: 50px 1fr auto; /* 3 columns */
   border: 1px solid white;
   background-color: #ccc;
 }
@@ -53,13 +53,14 @@
   align-items: center;
   border: 1px solid black;
   height: 30px;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: larger;
 }
 .statusIcon {
   height: 50px;
   width: auto;
 }
-.options{
-    font-size: medium;
-    
+.options {
+  font-size: medium;
 }
-
