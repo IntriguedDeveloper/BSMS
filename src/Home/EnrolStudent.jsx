@@ -19,13 +19,12 @@ export default function EnrolStudent() {
     const classQuery = query(collection_ref_teachers, where("Email", "==", userEmail));
     const querySnapShot = await getDocs(classQuery);
     const className = querySnapShot.docs[0].data().Class;
-    
     const collection_ref_students = `/classes/class-X/${className}/Students/Information`;
     await setDoc(doc(db, collection_ref_students, studentName), {
       name : studentName,
       roll : studentRoll,
     });
-    
+    alert("Enrolled Student")
   }
 
   return (
