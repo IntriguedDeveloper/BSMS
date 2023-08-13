@@ -5,10 +5,10 @@ export default function DeleteExistingStudent() {
     <>
       <div className="container">
         <div className="deletePage">
-          <input className="nameIn" type="text" placeholder="Name "></input>
+          <input className="nameIn" type="text" placeholder="Enter student name"></input>
           <input
             className="rollIn"
-            placeholder="Roll No. "
+            placeholder="Enter student roll no:"
             type="number"
           ></input>
           <button className="confirmBtn">Confirm</button>
