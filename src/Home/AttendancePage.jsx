@@ -1,6 +1,6 @@
 import React from "react";
 import "./AttendancePage.css";
-import checkIcon from '../assets/check-1.png';
+import checkIcon from '../assets/cross.png';
 
 export default function AttendancePage() {
   // Function to generate options for dropdowns
@@ -39,6 +39,7 @@ export default function AttendancePage() {
             </select>
           </div>
         </nav>
+        {/* Grid Part */}
         <div className="primaryGrid">
           <div className="row">
             <div className="column">1.</div>
