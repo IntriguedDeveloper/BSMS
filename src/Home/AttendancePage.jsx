@@ -1,40 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./AttendancePage.css";
 import checkIcon from "../assets/cross.png";
-import { getFirestore, collection, query, getDocs, onSnapshot } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  query,
+  getDocs,
+  onSnapshot,
+} from "firebase/firestore";
 import { AppInstance } from "../firebase";
-import { getDetails } from "../teacherDetails";
+import { useStudentData } from "../useStudentData";
 const db = getFirestore(AppInstance);
 export default function AttendancePage() {
-  const [studentRows, setStudentRows] = useState([]);
 
-  useEffect(() => {
-    generateStudentRows();
-  }, []);
-  const generateStudentRows = async () => {
-    let className = (await getDetails()).className;
-    const collection_ref = collection(
-      db,
-      `/classes/class-X/${className}/Students/Information`
-    );
-    const q = query(collection_ref);
-    const querySnapShotRows = await getDocs(q);
-
-    const sortedRows = querySnapShotRows.docs
-      .map((doc) => doc.data())
-      .sort((a, b) => a.roll - b.roll) // Sort by roll number
-      .map((studentData, index) => (
-        <div className="row" key={index}>
-          <div className="column">{studentData.roll}</div>
-          <div className="column">{studentData.name}</div>
-          <div className="column">
-            <img src={checkIcon} className="statusIcon" alt="Check Icon" />
-          </div>
-        </div>
-      ));
-
-    setStudentRows(sortedRows);
-  };
+  const studentData = useStudentData();
+ 
   const generateOptions = (start, end) => {
     const options = [];
     for (let i = start; i <= end; i++) {
@@ -87,7 +67,17 @@ export default function AttendancePage() {
             </select>
           </div>
         </nav>
-        <div className="primaryGrid">{studentRows}</div>
+        <div className="primaryGrid">
+          {studentData.map((student, index) => (
+            <div className="row" key={index}>
+              <div className="column">{student.roll}</div>
+              <div className="column">{student.name}</div>
+              <div className="column">
+                <img src={checkIcon} className="statusIcon" alt="Check Icon" />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
