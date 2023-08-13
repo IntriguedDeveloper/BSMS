@@ -11,7 +11,7 @@ export default function DeleteExistingStudent() {
 
   return (
     <>
-      <div className="container">
+      <div className="deletePageContainer">
         <div className="deletePage">
           <Routes>
             <Route
