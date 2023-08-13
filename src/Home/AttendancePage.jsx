@@ -1,10 +1,6 @@
 import React from "react";
 import "./AttendancePage.css";
-<<<<<<< HEAD
 import checkIcon from '../assets/cross.png';
-=======
-import checkIcon from "../assets/check-1.png";
->>>>>>> a1852444678f22b73c762af5b1202d8b6160b4bd
 
 export default function AttendancePage() {
   // Function to generate options for dropdowns
