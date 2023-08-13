@@ -35,8 +35,14 @@
   width: 40px;
   height: 20px;
 }
+.wrapperGrid{
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
 .primaryGrid {
   display: grid;
+  margin: 10px;
 }
 .row {
   display: grid;
@@ -53,9 +59,6 @@
   align-items: center;
   border: 1px solid black;
   height: 30px;
-
-  font-family: "Josefin Sans", sans-serif;
-  font-size: larger;
 }
 .statusIcon {
   height: 50px;
