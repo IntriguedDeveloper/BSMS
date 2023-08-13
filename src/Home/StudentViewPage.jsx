@@ -7,10 +7,10 @@ import {
   getDocs,
   where,
 } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+
 import { AppInstance } from "../firebase";
 const db = getFirestore(AppInstance);
-const auth = getAuth(AppInstance);
+import { getDetails } from "../teacherDetails";
 export default function StudentViewPage() {
   const [studentRows, setStudentRows] = useState([]);
 
@@ -18,19 +18,10 @@ export default function StudentViewPage() {
     generateStudentRows();
   }, []);
   const generateStudentRows = async () => {
-    const user = auth.currentUser;
-    const userEmail = user.email;
-    console.log(userEmail);
-    const collection_ref_teachers = collection(db, "Teachers");
-    const classQuery = query(
-      collection_ref_teachers,
-      where("Email", "==", userEmail)
-    );
-    const querySnapShot = await getDocs(classQuery);
-    const className = querySnapShot.docs[0].data().Class;
+    let className = (await getDetails()).className;
     const collection_ref = collection(
       db,
-      "/classes/class-X/X-A/Students/Information"
+      `/classes/class-X/${className}/Students/Information`
     );
     const q = query(collection_ref);
     const querySnapShotRows = await getDocs(q);

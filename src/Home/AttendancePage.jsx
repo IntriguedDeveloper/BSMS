@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./AttendancePage.css";
 import checkIcon from "../assets/cross.png";
-import { getFirestore, collection, query, getDocs, where } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { getFirestore, collection, query, getDocs, onSnapshot } from "firebase/firestore";
 import { AppInstance } from "../firebase";
+import { getDetails } from "../teacherDetails";
 const db = getFirestore(AppInstance);
-const auth = getAuth(AppInstance);
 export default function AttendancePage() {
   const [studentRows, setStudentRows] = useState([]);
 
@@ -13,15 +12,7 @@ export default function AttendancePage() {
     generateStudentRows();
   }, []);
   const generateStudentRows = async () => {
-    const user = auth.currentUser;
-    const userEmail = user.email;
-    const collection_ref_teachers = collection(db, "Teachers");
-    const classQuery = query(
-      collection_ref_teachers,
-      where("Email", "==", userEmail)
-    );
-    const querySnapShot = await getDocs(classQuery);
-    const className = querySnapShot.docs[0].data().Class;
+    let className = (await getDetails()).className;
     const collection_ref = collection(
       db,
       `/classes/class-X/${className}/Students/Information`
