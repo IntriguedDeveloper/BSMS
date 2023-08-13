@@ -1,4 +1,4 @@
-import { AppInstance } from "../firebase";
+import { AppInstance } from "./firebase";
 import {
   getFirestore,
   doc,
