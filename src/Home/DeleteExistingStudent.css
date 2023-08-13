@@ -1,8 +1,57 @@
+.deletePageContainer {
+    height: calc(100vh - 70px);
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    color: white;
+  }
 .deletePage{
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
+    background-color: rgb(58, 202, 139);
+    border-radius: 10px;
 }
+.deletePageContainer input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    font-size: larger;
+    width: 75%;
+    border-radius: 4px;
+    border: none;
+    padding: 10px;
+  
+  }
+  .deletePageContainer button {
+    height: 40px;
+    width: 30%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(12, 130, 181);
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+  }
+  .deletePageContainer button:hover {
+    cursor: pointer;
+    background-color: rgb(26, 161, 218);
+  }
+  .deletePageContainer button:active {
+      background-color: rgb(104, 195, 234);
+  }
+  
+  /* Prevent tap/click outline on mobile */
+  .deletePageContainer button:active:focus {
+    outline: none;
+  }
+

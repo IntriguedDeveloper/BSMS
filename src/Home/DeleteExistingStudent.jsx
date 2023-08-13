@@ -3,7 +3,7 @@ import "./DeleteExistingStudent.css";
 export default function DeleteExistingStudent() {
   return (
     <>
-      <div className="container">
+      <div className="deletePageContainer">
         <div className="deletePage">
           <input className="nameIn" type="text" placeholder="Enter student name"></input>
           <input
