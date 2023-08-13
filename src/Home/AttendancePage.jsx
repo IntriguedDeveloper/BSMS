@@ -1,6 +1,10 @@
 import React from "react";
 import "./AttendancePage.css";
+<<<<<<< HEAD
 import checkIcon from '../assets/cross.png';
+=======
+import checkIcon from "../assets/check-1.png";
+>>>>>>> a1852444678f22b73c762af5b1202d8b6160b4bd
 
 export default function AttendancePage() {
   // Function to generate options for dropdowns
@@ -8,33 +12,51 @@ export default function AttendancePage() {
     const options = [];
     for (let i = start; i <= end; i++) {
       const formattedValue = i < 10 ? `0${i}` : `${i}`;
-      options.push(<option key={formattedValue} value={formattedValue}>{formattedValue}</option>);
+      options.push(
+        <option key={formattedValue} value={formattedValue}>
+          {formattedValue}
+        </option>
+      );
     }
     return options;
   };
 
   return (
     <>
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=Josefin+Sans:wght@500&family=Noto+Serif+Vithkuqi:wght@500&family=Ubuntu:wght@700&display=swap');
+      </style>
       <div className="navContainer">
         <nav className="datebar">
           <div className="optionWrapper">
-            <input type="number" className="dateInput" placeholder="Day"></input>
+            <input
+              type="number"
+              className="dateInput"
+              placeholder="Day"
+            ></input>
             <select className="date-dropdown" id="day">
               
               {generateOptions(1, 31)}
             </select>
           </div>
           <div className="optionWrapper">
-            <input type="text" className="monthInput" placeholder="Month"></input>
+            <input
+              type="text"
+              className="monthInput"
+              placeholder="Month"
+            ></input>
             <select className="date-dropdown" id="month">
-              
-              {generateOptions(1, 12)}
+              <option className="options">January</option>
             </select>
           </div>
           <div className="optionWrapper">
-            <input className="yearInput" type="number" placeholder="Year"></input>
+            <input
+              className="yearInput"
+              type="number"
+              placeholder="Year"
+            ></input>
             <select className="date-dropdown" id="year">
-            
               {generateOptions(2001, 2030)}
             </select>
           </div>
