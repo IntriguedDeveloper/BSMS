@@ -1,4 +1,5 @@
 import React from "react";
+import "./DeleteExistingStudent.css";
 export default function DeleteExistingStudent() {
   return (
     <>
