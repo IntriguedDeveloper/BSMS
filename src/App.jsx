@@ -5,12 +5,7 @@ import React, { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import { firebaseConfig } from "./firebase.js";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -37,19 +32,13 @@ export default function App() {
     );
   }
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="*"
-          element={
-            isLoggedIn ? (
-              <HomePage></HomePage>
-            ) : (
-              <ClientAuthPage></ClientAuthPage>
-            )
-          }
-        ></Route>
-      </Routes>
-    </Router>
+    <Routes>
+      <Route
+        path="*"
+        element={
+          isLoggedIn ? <HomePage></HomePage> : <ClientAuthPage></ClientAuthPage>
+        }
+      ></Route>
+    </Routes>
   );
 }

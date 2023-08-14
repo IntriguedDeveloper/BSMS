@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import accountIcon from "../assets/account.png";
 import hamMenu from "../assets/menu.png";
@@ -83,7 +83,7 @@ export default function NavBar() {
             </li>
             <li
               onClick={() => {
-                redirectToPage("/delete-student");
+                redirectToPage("/delete-student/");
               }}
             >
               Delete Existing Students

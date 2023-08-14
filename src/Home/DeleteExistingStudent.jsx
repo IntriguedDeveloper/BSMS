@@ -1,13 +1,14 @@
 import React from "react";
 import "./DeleteExistingStudent.css";
-import { Routes, useNavigate, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import StudentProfile from "../Components/StudentProfile";
 
 export default function DeleteExistingStudent() {
   const navigate = useNavigate();
-  const handleRedirect = () => {
-    navigate("/studentProfile");
-  };
+  const handleRedirect = () =>{ 
+    navigate('studentProfile');
+  }
+  
 
   return (
     <>
@@ -34,7 +35,7 @@ export default function DeleteExistingStudent() {
                 </>
               }
             ></Route>
-            <Route path="/studentProfile" element = {<StudentProfile></StudentProfile>}></Route>
+            <Route path="studentProfile" element = {<StudentProfile></StudentProfile>}></Route>
             
           </Routes>
         </div>
