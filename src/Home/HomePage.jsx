@@ -1,9 +1,9 @@
 import NavBar from "../Components/NavBar.jsx";
 import { Routes, Route } from "react-router-dom";
-import AttendancePage from "./AttendancePage";
-import StudentViewPage from "./StudentViewPage";
-import EnrolStudent from "./EnrolStudent";
-import DeleteExistingStudent from "./DeleteExistingStudent";
+import AttendancePage from "./AttendancePage.jsx";
+import StudentViewPage from "./StudentViewPage.jsx";
+import EnrolStudent from "./EnrolStudent.jsx";
+import DeleteExistingStudent from "./DeleteExistingStudent.jsx";
 import "./HomePage.css";
 import { StudentDataProvider } from "../useStudentData.jsx";
 export default function HomePage() {
@@ -26,7 +26,7 @@ export default function HomePage() {
               element={<EnrolStudent></EnrolStudent>}
             ></Route>
             <Route
-              path="/delete-student"
+              path="/delete-student/*"
               element={<DeleteExistingStudent></DeleteExistingStudent>}
             ></Route>
           </Routes>

@@ -3,10 +3,6 @@ import "./AttendancePage.css";
 import checkIcon from "../assets/cross.png";
 import {
   getFirestore,
-  collection,
-  query,
-  getDocs,
-  onSnapshot,
 } from "firebase/firestore";
 import { AppInstance } from "../firebase";
 import { useStudentData } from "../useStudentData";
