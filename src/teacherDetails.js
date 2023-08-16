@@ -8,6 +8,7 @@ export async function getDetails() {
   let detailsObject = {
     className : '',
     userEmail : '',
+    userName : '',
   };
   const user = await auth.currentUser;
   const userEmail = user.email;
@@ -18,6 +19,8 @@ export async function getDetails() {
   );
   const querySnapShot = await getDocs(classQuery);
   const className = querySnapShot.docs[0].data().Class;
+  
+  detailsObject.userName = querySnapShot.docs[0].data().Name;
   detailsObject.className = className;
   detailsObject.userEmail = userEmail;
   return detailsObject;

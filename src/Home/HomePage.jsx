@@ -6,6 +6,7 @@ import EnrolStudent from "./EnrolStudent.jsx";
 import DeleteExistingStudent from "./DeleteExistingStudent.jsx";
 import "./HomePage.css";
 import { StudentDataProvider } from "../useStudentData.jsx";
+import TeacherProfile from "./TeacherProfile.jsx";
 export default function HomePage() {
   return (
     <>
@@ -14,21 +15,22 @@ export default function HomePage() {
         <StudentDataProvider>
           <Routes>
             <Route
-              path="/attendance"
+              path="attendance"
               element={<AttendancePage></AttendancePage>}
             ></Route>
             <Route
-              path="/view-students"
+              path="view-students"
               element={<StudentViewPage></StudentViewPage>}
             ></Route>
             <Route
-              path="/enrol-student"
+              path="enrol-student"
               element={<EnrolStudent></EnrolStudent>}
             ></Route>
             <Route
-              path="/delete-student/*"
+              path="delete-student/*"
               element={<DeleteExistingStudent></DeleteExistingStudent>}
             ></Route>
+            <Route path = "profile" element = {<TeacherProfile></TeacherProfile>}></Route>
           </Routes>
         </StudentDataProvider>
       </div>

@@ -62,21 +62,21 @@ export default function NavBar() {
           <ul className="menuList">
             <li
               onClick={() => {
-                redirectToPage("/attendance");
+                redirectToPage("attendance");
               }}
             >
               Attendance System
             </li>
             <li
               onClick={() => {
-                redirectToPage("/view-students");
+                redirectToPage("view-students");
               }}
             >
               View Students
             </li>
             <li
               onClick={() => {
-                redirectToPage("/enrol-student");
+                redirectToPage("enrol-student");
               }}
             >
               Enrol New Student
@@ -100,7 +100,7 @@ export default function NavBar() {
             ? "BSMS"
             : "Biometric Student Management System"}
         </h2>
-        <img src={accountIcon} className="accountIcon" alt="Account Icon" />
+        <img src={accountIcon} className="accountIcon" alt="Account Icon" onClick={() => {redirectToPage("profile")}}/>
       </div>
     </>
   );

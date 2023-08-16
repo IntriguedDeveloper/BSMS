@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DeleteExistingStudent.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import StudentProfile from "../Components/StudentProfile";
 
 export default function DeleteExistingStudent() {
   const navigate = useNavigate();
+  const [name , setName] = useState("");
+  const [roll, setRoll] = useState("");
   const handleRedirect = () =>{ 
+    
     navigate('studentProfile');
   }
   
@@ -23,11 +26,19 @@ export default function DeleteExistingStudent() {
                     className="nameIn"
                     type="text"
                     placeholder="Name "
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
                   ></input>
                   <input
                     className="rollIn"
                     placeholder="Roll No. "
                     type="number"
+                    value={roll}
+                    onChange={(e) => {
+                      setRoll(e.target.value);
+                    }}
                   ></input>
                   <button className="confirmBtn" onClick={handleRedirect}>
                     Confirm
