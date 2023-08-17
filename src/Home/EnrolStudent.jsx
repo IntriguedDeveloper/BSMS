@@ -11,6 +11,9 @@ export default function EnrolStudent() {
   const [msgIcon, setMsgIcon] = useState(checked);
   const [studentName, setStudentName] = useState(null);
   const [studentRoll, setStudentRoll] = useState(null);
+  let fingerprintPromise = new Promise(
+    
+  );
   const handleEnrolment = async () => {
     let className = (await getDetails()).className;
     const collection_ref_students = `/classes/class-X/${className}/Students/Information`;

@@ -6,7 +6,7 @@ export default function StudentProfile(){
   let regdNo="6983/12";
   return(
     <>
-    <div className="profileContainer2">
+    <div className="profileContainer">
       <ol className="studentDetailList">
         <li className="detailStudents">Name: {studentName}</li>
         <li className="detailStudents">Class: {classname}</li>

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import "./DeleteExistingStudent.css";
+import styles from "./DeleteExistingStudent.module.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import StudentProfile from "../Components/StudentProfile";
-
+import { AppInstance } from "../firebase";
+import { getFirestore, query, getDocs } from "firebase/firestore";
+const db = getFirestore(AppInstance);
 export default function DeleteExistingStudent() {
   const navigate = useNavigate();
   const [name , setName] = useState("");
@@ -15,8 +17,8 @@ export default function DeleteExistingStudent() {
 
   return (
     <>
-      <div className="deletePageContainer">
-        <div className="deletePage">
+      <div className = {styles.deletePageContainer}>
+        <div className={styles.deletePage}>
           <Routes>
             <Route
               path="/"

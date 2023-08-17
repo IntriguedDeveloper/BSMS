@@ -14,6 +14,7 @@ export default function HomePage() {
       <div className="primaryContent">
         <StudentDataProvider>
           <Routes>
+            <Route path = "/" element = {<AttendancePage></AttendancePage>}></Route>
             <Route
               path="attendance"
               element={<AttendancePage></AttendancePage>}
